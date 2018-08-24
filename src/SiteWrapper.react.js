@@ -44,6 +44,9 @@ const navBarItems: Array<navItem> = [
     value: "Database",
     icon: "database",
     subItems: [
+      { value: "Cloudkeys", to: "/cloudkeys", LinkComponent: withRouter(NavLink) },
+      { value: "Key Blanks", to: "/key-blanks", LinkComponent: withRouter(NavLink) },
+      { value: "Key Cards", to: "/key-cards", LinkComponent: withRouter(NavLink) },
       { value: "Users", to: "/users", LinkComponent: withRouter(NavLink) },
     ],
   },

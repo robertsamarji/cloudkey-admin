@@ -5,6 +5,9 @@ import './App.css';
 import "tabler-react/dist/Tabler.css";
 import { Card, Button } from "tabler-react";
 import HomePage from "./HomePage";
+import CloudkeysPage from "./database/CloudkeysPage";
+import KeyBlanksPage from "./database/KeyBlanksPage";
+import KeyCardsPage from "./database/KeyCardsPage";
 import UsersPage from "./database/UsersPage";
 import NewOrdersPage from "./orders/NewOrdersPage";
 import ProcessedOrdersPage from "./orders/ProcessedOrdersPage";
@@ -18,6 +21,9 @@ function App(props: Props): React.Node {
     <Router basename={process.env.PUBLIC_URL}>
       <Switch>
       <Route exact path="/" component={HomePage} />
+      <Route exact path="/cloudkeys" component={CloudkeysPage} />
+      <Route exact path="/key-blanks" component={KeyBlanksPage} />
+      <Route exact path="/key-cards" component={KeyCardsPage} />
       <Route exact path="/users" component={UsersPage} />
       <Route exact path="/new-orders" component={NewOrdersPage} />
       <Route exact path="/processed-orders" component={ProcessedOrdersPage} />
