@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Card, Form, Grid, Icon, Nav, Page, Table } from "tabler-react";
 import SiteWrapper from "../SiteWrapper.react";
 import KeyScanFrame from "../components/KeyScanFrame";
-import KeyScanList from "../components/KeyScanList";
+import ScanListCard from "./ScanListCard";
 import Pagination from "../components/Pagination";
 
 function NewScansPage() {
@@ -48,7 +48,7 @@ function NewScansPage() {
         </Grid.Row>
         <Grid.Row>
           <Grid.Col>
-            <KeyScanList />
+            <ScanListCard endpoint={"new_key_scans"}/>
           </Grid.Col>
         </Grid.Row>
         <Grid.Row>

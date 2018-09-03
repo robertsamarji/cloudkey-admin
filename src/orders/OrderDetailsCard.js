@@ -22,9 +22,9 @@ type Props = {|
    */
   +details?: Array<{| +title: string, +content?: React.Node |}>,
   /**
-   * An additional block of text below the details
-   */
-  +description?: string | {| +title: string, +content?: string |},
+  * A text area
+  */
+  +notes?: React.Node,
 |};
 
 /**
@@ -37,7 +37,7 @@ function OrderDetailsCard({
   name,
   address,
   details,
-  description,
+  notes,
 }: Props) {
   const cardClassName = cn(className);
   return (
@@ -65,20 +65,7 @@ function OrderDetailsCard({
             ))}
           </Grid.Row>
         )}
-        {description && (
-          <React.Fragment>
-            <Header.H6>
-              {typeof description === "string"
-                ? "Description"
-                : description.title}
-            </Header.H6>
-            <p>
-              {typeof description === "string"
-                ? description
-                : description.content}
-            </p>
-          </React.Fragment>
-        )}
+        {notes}
         {children}
       </Card.Body>
     </Card>

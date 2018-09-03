@@ -4,6 +4,7 @@ import SiteWrapper from "../SiteWrapper.react";
 import OrderDetailsCard from "./OrderDetailsCard";
 import OrderListCard from "./OrderListCard";
 import KeyDetailsCard from "./KeyDetailsCard";
+import Pagination from "../components/Pagination";
 
 function NewOrdersPage() {
   return (
@@ -25,11 +26,20 @@ function NewOrdersPage() {
                 { title: "Delivery cost", content: "£12.51" },
                 { title: "Total order value", content: "£49" },
               ]}
-              description={`Instead of "Description" put an order notes text input field here called "Order notes".`}
+              notes={
+                <Form.Group label={<Form.Label aside="56/100">Notes</Form.Label>}>
+                  <Form.Textarea
+                    defaultValue="Perhaps only useful for stating refund reasons. Can't think why else it'd be useful."
+                    name="notes-textarea"
+                    placeholder="Notes about this order..."
+                    rows={5}
+                  />
+                </Form.Group>
+              }
               children={
                 <div>
                   <Button block disabled color="success">Cut &amp; Packaged (courier requested)</Button>
-                  <Button block color="danger">Delivered</Button>
+                  <Button block color="danger">Dispatched</Button>
                   <hr />
                   <Form.Group label="Refund">
                     <Form.InputGroup>
@@ -50,7 +60,12 @@ function NewOrdersPage() {
         </Grid.Row>
         <Grid.Row>
           <Grid.Col>
-            <OrderListCard />
+            <OrderListCard endpoint={"new_key_orders"} />
+          </Grid.Col>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Col>
+            <Pagination />
           </Grid.Col>
         </Grid.Row>
       </Page.Content>

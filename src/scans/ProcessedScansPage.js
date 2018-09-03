@@ -2,7 +2,7 @@ import React from "react";
 import { Page, Grid, Button, Form, Table, Card } from "tabler-react";
 import SiteWrapper from "../SiteWrapper.react";
 import KeyScanFrame from "../components/KeyScanFrame";
-import KeyScanList from "../components/KeyScanList";
+import ScanListCard from "./ScanListCard";
 import Pagination from "../components/Pagination";
 
 function ProcessedScansPage() {
@@ -43,7 +43,7 @@ function ProcessedScansPage() {
         </Grid.Row>
         <Grid.Row>
           <Grid.Col>
-            <KeyScanList />
+            <ScanListCard endpoint="processed_key_scans"/>
           </Grid.Col>
         </Grid.Row>
         <Grid.Row>

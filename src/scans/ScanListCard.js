@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Table } from "tabler-react";
 import Api from "../components/api";
 
-class OrderListCard extends React.Component {
+class ScanListCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,14 +34,9 @@ class OrderListCard extends React.Component {
     const { results, isLoading, error } = this.state;
 
     for (let i=0; i<results.length; i++) {
-      if (results[i].cut_packaged === null) {
-        results[i].cut_packaged = "-";
-      }
-      if (results[i].dispatched === null) {
-        results[i].dispatched = "-";
-      }
-      if (results[i].completed === null) {
-        results[i].completed = "-";
+      if (results[i].cloudkey_id === null) {
+        results[i].cloudkey_id = "-";
+        results[i].processed = "-";
       }
     }
 
@@ -54,33 +49,29 @@ class OrderListCard extends React.Component {
 
     return (
       <Card>
-        <Table className="card-table">
+        <Table className="card-table table-vcenter">
           <Table.Header>
             <Table.ColHeader>ID</Table.ColHeader>
             <Table.ColHeader>Username</Table.ColHeader>
-            <Table.ColHeader>Type</Table.ColHeader>
+            <Table.ColHeader>Cloudkey ID</Table.ColHeader>
             <Table.ColHeader className="text-right">Received</Table.ColHeader>
-            <Table.ColHeader className="text-right">Cut & Packaged</Table.ColHeader>
-            <Table.ColHeader className="text-right">Dispatched</Table.ColHeader>
-            <Table.ColHeader className="text-right">Completed</Table.ColHeader>
+            <Table.ColHeader className="text-right">Processed</Table.ColHeader>
           </Table.Header>
           <Table.Body>
             {results.map(result =>
               <Table.Row>
                 <Table.Col>{result.id}</Table.Col>
                 <Table.Col>{result.username}</Table.Col>
-                <Table.Col>{result.type}</Table.Col>
+                <Table.Col>{result.cloudkey_id}</Table.Col>
                 <Table.Col className="text-right">{result.received}</Table.Col>
-                <Table.Col className="text-right">{result.cut_packaged}</Table.Col>
-                <Table.Col className="text-right">{result.dispatched}</Table.Col>
-                <Table.Col className="text-right">{result.completed}</Table.Col>
+                <Table.Col className="text-right">{result.processed}</Table.Col>
               </Table.Row>
             )}
           </Table.Body>
         </Table>
       </Card>
-    )
+    );
   }
 }
 
-export default OrderListCard;
+export default ScanListCard;
