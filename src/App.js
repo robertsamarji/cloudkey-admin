@@ -1,9 +1,7 @@
 import * as React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import logo from './logo.svg';
 import './App.css';
 import "tabler-react/dist/Tabler.css";
-import { Card, Button } from "tabler-react";
 import HomePage from "./HomePage";
 import CloudkeysPage from "./database/CloudkeysPage";
 import KeyBlanksPage from "./database/KeyBlanksPage";

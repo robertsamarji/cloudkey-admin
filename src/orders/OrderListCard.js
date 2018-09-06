@@ -12,10 +12,14 @@ class OrderListCard extends React.Component {
     };
   }
 
+  handleClick() {
+    console.log('Success!')
+  }
+
   componentDidMount() {
     this.setState({ isLoading: true });
 
-    Api.backend(this.props.endpoint).getKeyScans()
+    Api.backend(this.props.endpoint).getData()
     .then(response =>
       this.setState({
         results: response.data,
@@ -36,9 +40,6 @@ class OrderListCard extends React.Component {
     for (let i=0; i<results.length; i++) {
       if (results[i].cut_packaged === null) {
         results[i].cut_packaged = "-";
-      }
-      if (results[i].dispatched === null) {
-        results[i].dispatched = "-";
       }
       if (results[i].completed === null) {
         results[i].completed = "-";
@@ -61,18 +62,16 @@ class OrderListCard extends React.Component {
             <Table.ColHeader>Type</Table.ColHeader>
             <Table.ColHeader className="text-right">Received</Table.ColHeader>
             <Table.ColHeader className="text-right">Cut & Packaged</Table.ColHeader>
-            <Table.ColHeader className="text-right">Dispatched</Table.ColHeader>
             <Table.ColHeader className="text-right">Completed</Table.ColHeader>
           </Table.Header>
           <Table.Body>
             {results.map(result =>
-              <Table.Row>
+              <Table.Row onClick={this.handleClick}>
                 <Table.Col>{result.id}</Table.Col>
                 <Table.Col>{result.username}</Table.Col>
                 <Table.Col>{result.type}</Table.Col>
                 <Table.Col className="text-right">{result.received}</Table.Col>
                 <Table.Col className="text-right">{result.cut_packaged}</Table.Col>
-                <Table.Col className="text-right">{result.dispatched}</Table.Col>
                 <Table.Col className="text-right">{result.completed}</Table.Col>
               </Table.Row>
             )}

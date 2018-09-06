@@ -39,7 +39,6 @@ function ProcessedOrdersPage() {
               children={
                 <div>
                   <Button block disabled color="success">Cut &amp; Packaged (courier requested)</Button>
-                  <Button block color="danger">Dispatched</Button>
                   <hr />
                   <Form.Group label="Refund">
                     <Form.InputGroup>
@@ -60,7 +59,7 @@ function ProcessedOrdersPage() {
         </Grid.Row>
         <Grid.Row>
           <Grid.Col>
-            <OrderListCard />
+            <OrderListCard endpoint={"list-processed_key_orders"} />
           </Grid.Col>
         </Grid.Row>
         <Grid.Row>

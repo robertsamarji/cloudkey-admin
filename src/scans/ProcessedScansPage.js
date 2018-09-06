@@ -43,7 +43,7 @@ function ProcessedScansPage() {
         </Grid.Row>
         <Grid.Row>
           <Grid.Col>
-            <ScanListCard endpoint="processed_key_scans"/>
+            <ScanListCard endpoint="list-processed-key-scans"/>
           </Grid.Col>
         </Grid.Row>
         <Grid.Row>

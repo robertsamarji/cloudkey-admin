@@ -13,7 +13,7 @@ function NewOrdersPage() {
         <Grid.Row>
           <Grid.Col md={4}>
             <OrderDetailsCard
-              cardTitle="Order #1234 | Delivery"
+              cardTitle="Order #1 | Delivery"
               mapPlaceholder="../images/staticmap.png"
               name="Jonny Bongo"
               address={{
@@ -38,8 +38,7 @@ function NewOrdersPage() {
               }
               children={
                 <div>
-                  <Button block disabled color="success">Cut &amp; Packaged (courier requested)</Button>
-                  <Button block color="danger">Dispatched</Button>
+                  <Button block color="success">Cut &amp; Packaged (request courier)</Button>
                   <hr />
                   <Form.Group label="Refund">
                     <Form.InputGroup>
@@ -60,7 +59,7 @@ function NewOrdersPage() {
         </Grid.Row>
         <Grid.Row>
           <Grid.Col>
-            <OrderListCard endpoint={"new_key_orders"} />
+            <OrderListCard endpoint={"list-new-key-orders"} />
           </Grid.Col>
         </Grid.Row>
         <Grid.Row>

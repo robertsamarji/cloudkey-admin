@@ -15,7 +15,7 @@ class ScanListCard extends React.Component {
   componentDidMount() {
     this.setState({ isLoading: true });
 
-    Api.backend(this.props.endpoint).getKeyScans()
+    Api.backend(this.props.endpoint).getData()
     .then(response =>
       this.setState({
         results: response.data,

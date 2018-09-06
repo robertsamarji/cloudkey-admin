@@ -48,7 +48,7 @@ function NewScansPage() {
         </Grid.Row>
         <Grid.Row>
           <Grid.Col>
-            <ScanListCard endpoint={"new_key_scans"}/>
+            <ScanListCard endpoint={"list-new-key-scans"}/>
           </Grid.Col>
         </Grid.Row>
         <Grid.Row>

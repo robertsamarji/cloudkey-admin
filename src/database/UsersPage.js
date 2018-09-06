@@ -1,6 +1,7 @@
 import React from "react";
 import SiteWrapper from "../SiteWrapper.react";
-import { Button, Card, Dropdown, Form, Grid, Page, Table } from "tabler-react";
+import { Button, Card, Form, Grid, Page, Table } from "tabler-react";
+import Pagination from "../components/Pagination";
 
 function UsersPage() {
   return (
@@ -53,6 +54,11 @@ function UsersPage() {
                 </Table.Body>
               </Table>
             </Card>
+          </Grid.Col>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Col>
+            <Pagination />
           </Grid.Col>
         </Grid.Row>
       </Page.Content>
